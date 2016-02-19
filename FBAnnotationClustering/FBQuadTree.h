@@ -21,22 +21,22 @@
 /**
  Insert new annotation in tree.
  */
-- (BOOL)insertAnnotation:(id<MKAnnotation>)annotation;
+- (BOOL)insertAnnotation:(id<GMSMarker>)annotation;
 
 /**
  Remove an annotation from the tree.
  */
-- (BOOL)removeAnnotation:(id<MKAnnotation>)annotation;
+- (BOOL)removeAnnotation:(id<GMSMarker>)annotation;
 
 /**
  Enumerate annotations in @c box.
  */
-- (void)enumerateAnnotationsInBox:(FBBoundingBox)box usingBlock:(void (^)(id<MKAnnotation> obj))block;
+- (void)enumerateAnnotationsInBox:(FBBoundingBox)box usingBlock:(void (^)(id<GMSMarker> obj))block;
 
 
 /**
  Enumerate all annotations.
  */
-- (void)enumerateAnnotationsUsingBlock:(void (^)(id<MKAnnotation> obj))block;
+- (void)enumerateAnnotationsUsingBlock:(void (^)(id<GMSMarker> obj))block;
 
 @end

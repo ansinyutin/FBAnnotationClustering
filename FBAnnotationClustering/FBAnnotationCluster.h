@@ -7,16 +7,19 @@
 //
 
 #import <Foundation/Foundation.h>
-#import <MapKit/MapKit.h>
+#import <GoogleMaps/GoogleMaps.h>
 
 
+
+//@class MKAnnotation;
 /**
  Class that is used to display annotation clusters.
  */
-@interface FBAnnotationCluster : NSObject <MKAnnotation>
+
+@interface FBAnnotationCluster : GMSMarker
 
 /// Coordinate of the annotation. It will always be set.
-@property (nonatomic, assign) CLLocationCoordinate2D coordinate;
+//@property (nonatomic, assign) CLLocationCoordinate2D coordinate;
 
 /// Title of the annotation. Default is @c nil, but can be set.
 @property (nonatomic, copy) NSString *title;

@@ -83,7 +83,7 @@ CGFloat FBCellSizeForZoomScale(MKZoomScale zoomScale)
     }
 
     [self.lock lock];
-    for (id<MKAnnotation> annotation in annotations) {
+    for (id annotation in annotations) {
         [self.tree insertAnnotation:annotation];
     }
     [self.lock unlock];
@@ -96,7 +96,7 @@ CGFloat FBCellSizeForZoomScale(MKZoomScale zoomScale)
     }
 
     [self.lock lock];
-    for (id<MKAnnotation> annotation in annotations) {
+    for (id annotation in annotations) {
         [self.tree removeAnnotation:annotation];
     }
     [self.lock unlock];
@@ -107,7 +107,7 @@ CGFloat FBCellSizeForZoomScale(MKZoomScale zoomScale)
     return [self clusteredAnnotationsWithinMapRect:rect withZoomScale:zoomScale withFilter:nil];
 }
 
-- (NSArray *)clusteredAnnotationsWithinMapRect:(MKMapRect)rect withZoomScale:(double)zoomScale withFilter:(BOOL (^)(id<MKAnnotation>)) filter
+- (NSArray *)clusteredAnnotationsWithinMapRect:(MKMapRect)rect withZoomScale:(double)zoomScale withFilter:(BOOL (^)(id)) filter
 {
     double cellSize = FBCellSizeForZoomScale(zoomScale);
     if ([self.delegate respondsToSelector:@selector(cellSizeFactorForCoordinator:)]) {
@@ -133,12 +133,12 @@ CGFloat FBCellSizeForZoomScale(MKZoomScale zoomScale)
             
             NSMutableArray *annotations = [[NSMutableArray alloc] init];
 
-            [self.tree enumerateAnnotationsInBox:mapBox usingBlock:^(id<MKAnnotation> obj) {
+            [self.tree enumerateAnnotationsInBox:mapBox usingBlock:^(id<GMSMarker> obj) {
                 
                 if(!filter || (filter(obj) == TRUE))
                 {
-                    totalLatitude += [obj coordinate].latitude;
-                    totalLongitude += [obj coordinate].longitude;
+                    totalLatitude += [obj position].latitude;
+                    totalLongitude += [obj position].longitude;
                     [annotations addObject:obj];
                 }
             }];
@@ -151,7 +151,7 @@ CGFloat FBCellSizeForZoomScale(MKZoomScale zoomScale)
             if (count > 1) {
                 CLLocationCoordinate2D coordinate = CLLocationCoordinate2DMake(totalLatitude/count, totalLongitude/count);
                 FBAnnotationCluster *cluster = [[FBAnnotationCluster alloc] init];
-                cluster.coordinate = coordinate;
+                cluster.position = coordinate;
                 cluster.annotations = annotations;
                 [clusteredAnnotations addObject:cluster];
             }
@@ -167,7 +167,7 @@ CGFloat FBCellSizeForZoomScale(MKZoomScale zoomScale)
     NSMutableArray *annotations = [[NSMutableArray alloc] init];
     
     [self.lock lock];
-    [self.tree enumerateAnnotationsUsingBlock:^(id<MKAnnotation> obj) {
+    [self.tree enumerateAnnotationsUsingBlock:^(id<GMSMarker> obj) {
         [annotations addObject:obj];
     }];
     [self.lock unlock];
@@ -175,13 +175,13 @@ CGFloat FBCellSizeForZoomScale(MKZoomScale zoomScale)
     return annotations;
 }
 
-- (void)displayAnnotations:(NSArray *)annotations onMapView:(MKMapView *)mapView
+- (void)displayAnnotations:(NSArray *)annotations onMapView:(GMSMapView *)mapView
 {
     NSMutableSet *before = [NSMutableSet setWithArray:mapView.annotations];
-    MKUserLocation *userLocation = [mapView userLocation];
-    if (userLocation) {
-        [before removeObject:userLocation];
-    }
+//    MKUserLocation *userLocation = [mapView userLocation];
+//    if (userLocation) {
+//        [before removeObject:userLocation];
+//    }
     NSSet *after = [NSSet setWithArray:annotations];
     
     NSMutableSet *toKeep = [NSMutableSet setWithSet:before];

@@ -8,10 +8,13 @@
 
 #import "FBAppDelegate.h"
 
+#import <GoogleMaps/GoogleMaps.h>
+
 @implementation FBAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    [GMSServices provideAPIKey:@"AIzaSyA1oWNJId2kUy0fKsL1CMR4FeKYLw_-xdY"];
     // Override point for customization after application launch.
     return YES;
 }

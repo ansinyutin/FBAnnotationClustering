@@ -7,319 +7,464 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1F2755EE6457F3ABCB05526C /* FBAnnotationCluster.h in Headers */ = {isa = PBXBuildFile; fileRef = D10B19FA16E0F96B32694B37 /* FBAnnotationCluster.h */; };
-		230111A9AC22CD3C7169D183 /* FBAnnotationCluster.m in Sources */ = {isa = PBXBuildFile; fileRef = D63F24F5273457602FBA67EA /* FBAnnotationCluster.m */; };
-		2E629529E83423A22A419DB8 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FEF0D4C0F3DF3855FCF0BA1B /* Foundation.framework */; };
-		47BD55B975CAFF97A70BE51F /* FBAnnotationClustering.h in Headers */ = {isa = PBXBuildFile; fileRef = 28E85C02195308E602F0DDBE /* FBAnnotationClustering.h */; };
-		5FDE8333E8C10B25209A11D8 /* FBQuadTreeNode.h in Headers */ = {isa = PBXBuildFile; fileRef = 3663C14A8064333943C1A8B0 /* FBQuadTreeNode.h */; };
-		6413CDC32F01E1F63E6AD825 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE902CCBD73FB7E4B787DBAE /* MapKit.framework */; };
-		6E348167BE41ACB4E22CEB92 /* Pods-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 538D2468806BBCF27C2568BA /* Pods-dummy.m */; };
-		83C8E264AE73C0EF54A8E85C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FEF0D4C0F3DF3855FCF0BA1B /* Foundation.framework */; };
-		971732DFA55044200E897E38 /* Pods-FBAnnotationClustering-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = C281F7F10CDEB5AADDD703AD /* Pods-FBAnnotationClustering-dummy.m */; };
-		B3800966EAF83DC52996D642 /* FBClusteringManager.h in Headers */ = {isa = PBXBuildFile; fileRef = CEEB84049BA1AE40C0D26EC2 /* FBClusteringManager.h */; };
-		BE1A6F2FF38010DFD82F9120 /* FBClusteringManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 8402DB24A4D2D1CAC3759C6D /* FBClusteringManager.m */; };
-		C314623E58DEE8CBE26B7337 /* FBQuadTree.h in Headers */ = {isa = PBXBuildFile; fileRef = FD66FE75C103B042C69B25C5 /* FBQuadTree.h */; };
-		C8A58CB4C4D052E5C9EC745F /* FBQuadTree.m in Sources */ = {isa = PBXBuildFile; fileRef = 940D4CA0C8962D6E3E428650 /* FBQuadTree.m */; };
-		F8439367A557D44B5B7C89BC /* FBQuadTreeNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 71B51B577AFD828E75AFD276 /* FBQuadTreeNode.m */; };
-		FC7C615BBCA809B9C1059046 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 85856AC116E120434E928E34 /* CoreLocation.framework */; };
+		19B488E76D64058B6FF703F58D1AF7EF /* NSArray+PureLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = DB8CB914C2F63BF927F61738C7AF2051 /* NSArray+PureLayout.m */; };
+		1C156A1DF416F372BF0F4496C21D2A61 /* NSArray+PureLayout.h in Headers */ = {isa = PBXBuildFile; fileRef = D296B0548859F7A4F8B697E3307BC95E /* NSArray+PureLayout.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		27798B235B14449D6347E1FB38BE7924 /* PureLayout.h in Headers */ = {isa = PBXBuildFile; fileRef = C51D78775D0356F46D590E42CEE14C41 /* PureLayout.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		29BCFB5C425B3CD2B9F47DC1319E1C19 /* FBQuadTree.m in Sources */ = {isa = PBXBuildFile; fileRef = 68FACCF003FD2326BCCE0C09EA2875DF /* FBQuadTree.m */; };
+		2A8897F67C4CC6BA43B7A18C730F340B /* FBQuadTreeNode.h in Headers */ = {isa = PBXBuildFile; fileRef = C739FFE2EA5B45E272C4C1E4E5A7E058 /* FBQuadTreeNode.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		39F1642E4408625EA17C87E5DC19BC6B /* PureLayout-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 0804700D1573F73AD1555A9785759F04 /* PureLayout-dummy.m */; };
+		41B483DAB40DFAA176987AA53546BA55 /* FBAnnotationCluster.h in Headers */ = {isa = PBXBuildFile; fileRef = DF0E6C37AF73D2F401927406E0D65396 /* FBAnnotationCluster.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		4999CFED1C770B24004176A9 /* GMSMapView+Annotations.h in Headers */ = {isa = PBXBuildFile; fileRef = 4999CFEB1C770B24004176A9 /* GMSMapView+Annotations.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		4999CFEE1C770B24004176A9 /* GMSMapView+Annotations.m in Sources */ = {isa = PBXBuildFile; fileRef = 4999CFEC1C770B24004176A9 /* GMSMapView+Annotations.m */; };
+		4BBC7FE05741A9012F1611561F7C9F0D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DFD95E1FA4F08B2EC8ABE9AC2C4F8264 /* Foundation.framework */; };
+		4E248757B2266DE46506B57B64BBFD39 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D67B24007E8B35A621D9C576E66085B1 /* CoreLocation.framework */; };
+		5026BD60790395B1454E0B81FC4E7EF3 /* FBAnnotationCluster.m in Sources */ = {isa = PBXBuildFile; fileRef = C80BA079E80F41A989D79D334004FACF /* FBAnnotationCluster.m */; };
+		5A9F9FE8E9CECCDF134DDC4769AAD572 /* FBQuadTree.h in Headers */ = {isa = PBXBuildFile; fileRef = 46A93BD04E22052953407B0127532E91 /* FBQuadTree.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5B926BEA0A46CFE8BBABF63888DC4DDE /* PureLayoutDefines.h in Headers */ = {isa = PBXBuildFile; fileRef = 41CD40BE9F27C2691DCE7AD8F73B0255 /* PureLayoutDefines.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		657A6F7D16774B2612D2200D6CE67194 /* FBClusteringManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 56D69CE745D02933B5CA00E644027D04 /* FBClusteringManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6C5084401787B3BBC5A064C6FDECB716 /* Pods-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 272643F56613CA0D336AE3DBF19DC404 /* Pods-dummy.m */; };
+		8D8CFFFC9264371298DC7B5825126F49 /* ALView+PureLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = BC8B47D6C8EB0E4F0613835B241F9772 /* ALView+PureLayout.m */; };
+		92A7C8FFC40367BB24C473E006143EBA /* FBAnnotationClustering-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 20F164E88C34ADFF95562CB874FB7C09 /* FBAnnotationClustering-dummy.m */; };
+		95C34158590EEAE4C7FF9881E4F5FD9C /* NSLayoutConstraint+PureLayout.h in Headers */ = {isa = PBXBuildFile; fileRef = 7281970E716E060FCA80A062A3825DFD /* NSLayoutConstraint+PureLayout.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9C0E793D0C1BAEBFD1FAAD78D3DC0AE5 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DFD95E1FA4F08B2EC8ABE9AC2C4F8264 /* Foundation.framework */; };
+		9D2CA8ECD5BE94B131304D5FF04BC68A /* FBQuadTreeNode.m in Sources */ = {isa = PBXBuildFile; fileRef = A1E2C3420BD5D25FF367B4F8B87145BD /* FBQuadTreeNode.m */; };
+		9FC8E9C135D784E3B2543148E0A07048 /* ALView+PureLayout.h in Headers */ = {isa = PBXBuildFile; fileRef = 51FCF6DB7CDF507F6D5D6E14A1E96F6F /* ALView+PureLayout.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B2782D9904F82ADF2772340C2D20525D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DFD95E1FA4F08B2EC8ABE9AC2C4F8264 /* Foundation.framework */; };
+		BB83E6133675972F8416EDCB10618A6D /* FBAnnotationClustering.h in Headers */ = {isa = PBXBuildFile; fileRef = E24E0CF4717677A32ED3D7D28AD10FFD /* FBAnnotationClustering.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E485D572F0BC723D0943887D95073296 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7AF6FF91DD0721415418E850C74A017A /* MapKit.framework */; };
+		F2805FDFB638214D7106823FB630AD7F /* PureLayout+Internal.h in Headers */ = {isa = PBXBuildFile; fileRef = 87548E100D0FB0F59F34FC7EE58A1D77 /* PureLayout+Internal.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		FA9B685DA02429A0104E16A8B77F6279 /* FBClusteringManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C5FEB83B0CE3ADA50D7AB3819BDBF90C /* FBClusteringManager.m */; };
+		FC1AEE6BA9501376F7DD3C79F29F3C1C /* NSLayoutConstraint+PureLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = CFD8E3A8446D9D10DC0F6DAE9C582C95 /* NSLayoutConstraint+PureLayout.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		40C75EFF072D1CADA1C79FAB /* PBXContainerItemProxy */ = {
+		402D1318B20B1B64A32F629E7010985A /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 994E7505722C01E294FB84AE /* Project object */;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 656299E91232636B85E5E89D;
-			remoteInfo = "Pods-FBAnnotationClustering";
+			remoteGlobalIDString = 2BBBBD535B6C5CB69523DDC370D95E48;
+			remoteInfo = PureLayout;
+		};
+		92531FC7947123889A765880284D5D2F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 47F297000224A08E8F3E51773A4A60F2;
+			remoteInfo = FBAnnotationClustering;
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		05E0F314E1D39CF8A4D54515 /* Pods-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-resources.sh"; sourceTree = "<group>"; };
-		233A0567F9A2A80CE1C275F8 /* Pods-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-acknowledgements.markdown"; sourceTree = "<group>"; };
-		28E85C02195308E602F0DDBE /* FBAnnotationClustering.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = FBAnnotationClustering.h; sourceTree = "<group>"; };
-		3663C14A8064333943C1A8B0 /* FBQuadTreeNode.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = FBQuadTreeNode.h; sourceTree = "<group>"; };
-		39E2421312B5DE4017223A40 /* Podfile */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		46A44E2DA6A79149024713A5 /* Pods-FBAnnotationClustering.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-FBAnnotationClustering.xcconfig"; sourceTree = "<group>"; };
-		538D2468806BBCF27C2568BA /* Pods-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-dummy.m"; sourceTree = "<group>"; };
-		68E3E6C81C04657D6EA37223 /* Pods-FBAnnotationClustering-Private.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-FBAnnotationClustering-Private.xcconfig"; sourceTree = "<group>"; };
-		71B51B577AFD828E75AFD276 /* FBQuadTreeNode.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = FBQuadTreeNode.m; sourceTree = "<group>"; };
-		8402DB24A4D2D1CAC3759C6D /* FBClusteringManager.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = FBClusteringManager.m; sourceTree = "<group>"; };
-		85856AC116E120434E928E34 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.3.sdk/System/Library/Frameworks/CoreLocation.framework; sourceTree = DEVELOPER_DIR; };
-		89E6BED1730D9A6A051DC7C3 /* Pods-environment.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-environment.h"; sourceTree = "<group>"; };
-		940D4CA0C8962D6E3E428650 /* FBQuadTree.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = FBQuadTree.m; sourceTree = "<group>"; };
-		9E10339F9D3F3EA5F5920902 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Pods.release.xcconfig; sourceTree = "<group>"; };
-		C17768AF84A171BC9BBE6592 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		C281F7F10CDEB5AADDD703AD /* Pods-FBAnnotationClustering-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-FBAnnotationClustering-dummy.m"; sourceTree = "<group>"; };
-		C512DDE43244CF21726CE691 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Pods.debug.xcconfig; sourceTree = "<group>"; };
-		CE902CCBD73FB7E4B787DBAE /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.3.sdk/System/Library/Frameworks/MapKit.framework; sourceTree = DEVELOPER_DIR; };
-		CEEB84049BA1AE40C0D26EC2 /* FBClusteringManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = FBClusteringManager.h; sourceTree = "<group>"; };
-		D10B19FA16E0F96B32694B37 /* FBAnnotationCluster.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = FBAnnotationCluster.h; sourceTree = "<group>"; };
-		D63F24F5273457602FBA67EA /* FBAnnotationCluster.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = FBAnnotationCluster.m; sourceTree = "<group>"; };
-		DB080E6A5CAA3E293DF10FE0 /* libPods-FBAnnotationClustering.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-FBAnnotationClustering.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		E1DEEBEDE884C8FC9BC28362 /* Pods-FBAnnotationClustering-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-FBAnnotationClustering-prefix.pch"; sourceTree = "<group>"; };
-		FB08F660751CB949061CC00F /* Pods-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-acknowledgements.plist"; sourceTree = "<group>"; };
-		FD66FE75C103B042C69B25C5 /* FBQuadTree.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = FBQuadTree.h; sourceTree = "<group>"; };
-		FEF0D4C0F3DF3855FCF0BA1B /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		0381E7DB26505B982E8302CC274AC4CF /* libPureLayout.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPureLayout.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		0804700D1573F73AD1555A9785759F04 /* PureLayout-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "PureLayout-dummy.m"; sourceTree = "<group>"; };
+		10834806BD7B412BC24F347361FA2C8E /* Pods-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-acknowledgements.plist"; sourceTree = "<group>"; };
+		20F164E88C34ADFF95562CB874FB7C09 /* FBAnnotationClustering-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "FBAnnotationClustering-dummy.m"; sourceTree = "<group>"; };
+		272643F56613CA0D336AE3DBF19DC404 /* Pods-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-dummy.m"; sourceTree = "<group>"; };
+		2CA12D3D26266B4B6EEE74B868224D4D /* GoogleMaps.bundle */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "wrapper.plug-in"; name = GoogleMaps.bundle; path = Frameworks/GoogleMaps.framework/Versions/A/Resources/GoogleMaps.bundle; sourceTree = "<group>"; };
+		37DB56D75062CC75FCB0966E1C6E8A8E /* Pods-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-acknowledgements.markdown"; sourceTree = "<group>"; };
+		41CD40BE9F27C2691DCE7AD8F73B0255 /* PureLayoutDefines.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PureLayoutDefines.h; path = PureLayout/PureLayout/PureLayoutDefines.h; sourceTree = "<group>"; };
+		41FD774A69B79D7135365669ACE9697A /* PureLayout.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = PureLayout.xcconfig; sourceTree = "<group>"; };
+		46A93BD04E22052953407B0127532E91 /* FBQuadTree.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = FBQuadTree.h; sourceTree = "<group>"; };
+		4999CFEB1C770B24004176A9 /* GMSMapView+Annotations.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "GMSMapView+Annotations.h"; sourceTree = "<group>"; };
+		4999CFEC1C770B24004176A9 /* GMSMapView+Annotations.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "GMSMapView+Annotations.m"; sourceTree = "<group>"; };
+		4E762F23EC34ED4A6FF3312D84E33A40 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Pods.debug.xcconfig; sourceTree = "<group>"; };
+		50FDB26DB3CD8D2C143A1450ABCB96B8 /* PureLayout-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "PureLayout-prefix.pch"; sourceTree = "<group>"; };
+		51FCF6DB7CDF507F6D5D6E14A1E96F6F /* ALView+PureLayout.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "ALView+PureLayout.h"; path = "PureLayout/PureLayout/ALView+PureLayout.h"; sourceTree = "<group>"; };
+		56D69CE745D02933B5CA00E644027D04 /* FBClusteringManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = FBClusteringManager.h; sourceTree = "<group>"; };
+		68FACCF003FD2326BCCE0C09EA2875DF /* FBQuadTree.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = FBQuadTree.m; sourceTree = "<group>"; };
+		6911BECA35E7518D864239B7E898EEF3 /* Pods-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-frameworks.sh"; sourceTree = "<group>"; };
+		7281970E716E060FCA80A062A3825DFD /* NSLayoutConstraint+PureLayout.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSLayoutConstraint+PureLayout.h"; path = "PureLayout/PureLayout/NSLayoutConstraint+PureLayout.h"; sourceTree = "<group>"; };
+		7AF6FF91DD0721415418E850C74A017A /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.0.sdk/System/Library/Frameworks/MapKit.framework; sourceTree = DEVELOPER_DIR; };
+		810158DF6B325DF72D76CD35FECED7D0 /* GoogleMaps.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleMaps.framework; path = Frameworks/GoogleMaps.framework; sourceTree = "<group>"; };
+		87548E100D0FB0F59F34FC7EE58A1D77 /* PureLayout+Internal.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "PureLayout+Internal.h"; path = "PureLayout/PureLayout/PureLayout+Internal.h"; sourceTree = "<group>"; };
+		8F482EB359F42174E33CC7E1485CECFC /* libFBAnnotationClustering.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libFBAnnotationClustering.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		97DE507A00ECABE378CDCB82DAE751D1 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		98C98CDFB3F20F2925F6CD1F141BB14F /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Pods.release.xcconfig; sourceTree = "<group>"; };
+		9F2913F8817BDE03CAEA4F6FA5A88C7B /* FBAnnotationClustering-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "FBAnnotationClustering-prefix.pch"; sourceTree = "<group>"; };
+		A1A36D34413696BE466E2CA0AFF194DA /* Pods-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-resources.sh"; sourceTree = "<group>"; };
+		A1E2C3420BD5D25FF367B4F8B87145BD /* FBQuadTreeNode.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = FBQuadTreeNode.m; sourceTree = "<group>"; };
+		B8D909457ECBFE8CEB0354900E09D0A4 /* FBAnnotationClustering.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = FBAnnotationClustering.xcconfig; sourceTree = "<group>"; };
+		BA6428E9F66FD5A23C0A2E06ED26CD2F /* Podfile */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		BC8B47D6C8EB0E4F0613835B241F9772 /* ALView+PureLayout.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "ALView+PureLayout.m"; path = "PureLayout/PureLayout/ALView+PureLayout.m"; sourceTree = "<group>"; };
+		C51D78775D0356F46D590E42CEE14C41 /* PureLayout.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PureLayout.h; path = PureLayout/PureLayout/PureLayout.h; sourceTree = "<group>"; };
+		C5FEB83B0CE3ADA50D7AB3819BDBF90C /* FBClusteringManager.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = FBClusteringManager.m; sourceTree = "<group>"; };
+		C739FFE2EA5B45E272C4C1E4E5A7E058 /* FBQuadTreeNode.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = FBQuadTreeNode.h; sourceTree = "<group>"; };
+		C80BA079E80F41A989D79D334004FACF /* FBAnnotationCluster.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = FBAnnotationCluster.m; sourceTree = "<group>"; };
+		CFD8E3A8446D9D10DC0F6DAE9C582C95 /* NSLayoutConstraint+PureLayout.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSLayoutConstraint+PureLayout.m"; path = "PureLayout/PureLayout/NSLayoutConstraint+PureLayout.m"; sourceTree = "<group>"; };
+		D296B0548859F7A4F8B697E3307BC95E /* NSArray+PureLayout.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSArray+PureLayout.h"; path = "PureLayout/PureLayout/NSArray+PureLayout.h"; sourceTree = "<group>"; };
+		D67B24007E8B35A621D9C576E66085B1 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.0.sdk/System/Library/Frameworks/CoreLocation.framework; sourceTree = DEVELOPER_DIR; };
+		DB8CB914C2F63BF927F61738C7AF2051 /* NSArray+PureLayout.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSArray+PureLayout.m"; path = "PureLayout/PureLayout/NSArray+PureLayout.m"; sourceTree = "<group>"; };
+		DF0E6C37AF73D2F401927406E0D65396 /* FBAnnotationCluster.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = FBAnnotationCluster.h; sourceTree = "<group>"; };
+		DFD95E1FA4F08B2EC8ABE9AC2C4F8264 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		E24E0CF4717677A32ED3D7D28AD10FFD /* FBAnnotationClustering.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = FBAnnotationClustering.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		3C923BC5411AF1FA98C39387 /* Frameworks */ = {
+		327694C1FEF166CAC77D1F6CCE94E447 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2E629529E83423A22A419DB8 /* Foundation.framework in Frameworks */,
+				B2782D9904F82ADF2772340C2D20525D /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		5CFDCF00CCB425D8050DD061 /* Frameworks */ = {
+		5727B2F51377B6FAED4AA30671DCC805 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FC7C615BBCA809B9C1059046 /* CoreLocation.framework in Frameworks */,
-				83C8E264AE73C0EF54A8E85C /* Foundation.framework in Frameworks */,
-				6413CDC32F01E1F63E6AD825 /* MapKit.framework in Frameworks */,
+				4BBC7FE05741A9012F1611561F7C9F0D /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7835A22DD40F6B5E846DE85529D00135 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4E248757B2266DE46506B57B64BBFD39 /* CoreLocation.framework in Frameworks */,
+				9C0E793D0C1BAEBFD1FAAD78D3DC0AE5 /* Foundation.framework in Frameworks */,
+				E485D572F0BC723D0943887D95073296 /* MapKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		0F22455307228A0B3BE7B67D /* Development Pods */ = {
+		003B964493461BBBD676D9632D894642 /* FBAnnotationClustering */ = {
 			isa = PBXGroup;
 			children = (
-				4E3AFF7CF44A790518C829FC /* FBAnnotationClustering */,
-			);
-			name = "Development Pods";
-			sourceTree = "<group>";
-		};
-		1AE4433C896E3F972A23989F /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				2EEFC2FEDA0FC8B7461D25C0 /* iOS */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		243E70DC26441BABA422374B /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				233A0567F9A2A80CE1C275F8 /* Pods-acknowledgements.markdown */,
-				FB08F660751CB949061CC00F /* Pods-acknowledgements.plist */,
-				538D2468806BBCF27C2568BA /* Pods-dummy.m */,
-				89E6BED1730D9A6A051DC7C3 /* Pods-environment.h */,
-				05E0F314E1D39CF8A4D54515 /* Pods-resources.sh */,
-				C512DDE43244CF21726CE691 /* Pods.debug.xcconfig */,
-				9E10339F9D3F3EA5F5920902 /* Pods.release.xcconfig */,
-			);
-			name = Pods;
-			path = "Target Support Files/Pods";
-			sourceTree = "<group>";
-		};
-		2EEFC2FEDA0FC8B7461D25C0 /* iOS */ = {
-			isa = PBXGroup;
-			children = (
-				85856AC116E120434E928E34 /* CoreLocation.framework */,
-				FEF0D4C0F3DF3855FCF0BA1B /* Foundation.framework */,
-				CE902CCBD73FB7E4B787DBAE /* MapKit.framework */,
-			);
-			name = iOS;
-			sourceTree = "<group>";
-		};
-		4E3AFF7CF44A790518C829FC /* FBAnnotationClustering */ = {
-			isa = PBXGroup;
-			children = (
-				AD00C45F9C301B6AFBCA5CBC /* FBAnnotationClustering */,
-				8E03A97F6E7996B5399F47F8 /* Support Files */,
+				A17FEC4A0F7ECBA836C7204EDB0969B6 /* FBAnnotationClustering */,
+				2D9F9DDE2213629079A9C4615E96F876 /* Support Files */,
 			);
 			name = FBAnnotationClustering;
 			path = ../..;
 			sourceTree = "<group>";
 		};
-		553D668234A90597C62B331A /* Targets Support Files */ = {
+		037C0CA694176A3C0915F62C9D20B3E6 /* Targets Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				243E70DC26441BABA422374B /* Pods */,
+				B3D1D13E0C6553800746CB8FD61CF946 /* Pods */,
 			);
 			name = "Targets Support Files";
 			sourceTree = "<group>";
 		};
-		8E03A97F6E7996B5399F47F8 /* Support Files */ = {
+		122DA2E5084A4393C29BE363C764795C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				46A44E2DA6A79149024713A5 /* Pods-FBAnnotationClustering.xcconfig */,
-				68E3E6C81C04657D6EA37223 /* Pods-FBAnnotationClustering-Private.xcconfig */,
-				C281F7F10CDEB5AADDD703AD /* Pods-FBAnnotationClustering-dummy.m */,
-				E1DEEBEDE884C8FC9BC28362 /* Pods-FBAnnotationClustering-prefix.pch */,
+				DB348FBF951F2E2C01100A13F7489B9B /* iOS */,
 			);
-			name = "Support Files";
-			path = "Example/Pods/Target Support Files/Pods-FBAnnotationClustering";
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		AD00C45F9C301B6AFBCA5CBC /* FBAnnotationClustering */ = {
+		28F2D549919A3460A7CFCEA62188A193 /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				D10B19FA16E0F96B32694B37 /* FBAnnotationCluster.h */,
-				D63F24F5273457602FBA67EA /* FBAnnotationCluster.m */,
-				28E85C02195308E602F0DDBE /* FBAnnotationClustering.h */,
-				CEEB84049BA1AE40C0D26EC2 /* FBClusteringManager.h */,
-				8402DB24A4D2D1CAC3759C6D /* FBClusteringManager.m */,
-				FD66FE75C103B042C69B25C5 /* FBQuadTree.h */,
-				940D4CA0C8962D6E3E428650 /* FBQuadTree.m */,
-				3663C14A8064333943C1A8B0 /* FBQuadTreeNode.h */,
-				71B51B577AFD828E75AFD276 /* FBQuadTreeNode.m */,
+				41FD774A69B79D7135365669ACE9697A /* PureLayout.xcconfig */,
+				0804700D1573F73AD1555A9785759F04 /* PureLayout-dummy.m */,
+				50FDB26DB3CD8D2C143A1450ABCB96B8 /* PureLayout-prefix.pch */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/PureLayout";
+			sourceTree = "<group>";
+		};
+		2D9F9DDE2213629079A9C4615E96F876 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				B8D909457ECBFE8CEB0354900E09D0A4 /* FBAnnotationClustering.xcconfig */,
+				20F164E88C34ADFF95562CB874FB7C09 /* FBAnnotationClustering-dummy.m */,
+				9F2913F8817BDE03CAEA4F6FA5A88C7B /* FBAnnotationClustering-prefix.pch */,
+			);
+			name = "Support Files";
+			path = "Example/Pods/Target Support Files/FBAnnotationClustering";
+			sourceTree = "<group>";
+		};
+		50197A693E912BE82380B95E4E9EC4AA /* GoogleMaps */ = {
+			isa = PBXGroup;
+			children = (
+				E3AE381A7E09F4A27112BFE1051FD726 /* Frameworks */,
+				A5BDE3C319663E8A284B52CC81416776 /* Resources */,
+			);
+			path = GoogleMaps;
+			sourceTree = "<group>";
+		};
+		7DB346D0F39D3F0E887471402A8071AB = {
+			isa = PBXGroup;
+			children = (
+				BA6428E9F66FD5A23C0A2E06ED26CD2F /* Podfile */,
+				BDC65CAF478A4734EB44F48D2E58BC69 /* Development Pods */,
+				122DA2E5084A4393C29BE363C764795C /* Frameworks */,
+				E2913BC9752450F3B4D6BB16759E01F4 /* Pods */,
+				CAF7C52FDAB7483B8E2DC265983EBBF1 /* Products */,
+				037C0CA694176A3C0915F62C9D20B3E6 /* Targets Support Files */,
+			);
+			sourceTree = "<group>";
+		};
+		A17FEC4A0F7ECBA836C7204EDB0969B6 /* FBAnnotationClustering */ = {
+			isa = PBXGroup;
+			children = (
+				4999CFEB1C770B24004176A9 /* GMSMapView+Annotations.h */,
+				4999CFEC1C770B24004176A9 /* GMSMapView+Annotations.m */,
+				DF0E6C37AF73D2F401927406E0D65396 /* FBAnnotationCluster.h */,
+				C80BA079E80F41A989D79D334004FACF /* FBAnnotationCluster.m */,
+				E24E0CF4717677A32ED3D7D28AD10FFD /* FBAnnotationClustering.h */,
+				56D69CE745D02933B5CA00E644027D04 /* FBClusteringManager.h */,
+				C5FEB83B0CE3ADA50D7AB3819BDBF90C /* FBClusteringManager.m */,
+				46A93BD04E22052953407B0127532E91 /* FBQuadTree.h */,
+				68FACCF003FD2326BCCE0C09EA2875DF /* FBQuadTree.m */,
+				C739FFE2EA5B45E272C4C1E4E5A7E058 /* FBQuadTreeNode.h */,
+				A1E2C3420BD5D25FF367B4F8B87145BD /* FBQuadTreeNode.m */,
 			);
 			path = FBAnnotationClustering;
 			sourceTree = "<group>";
 		};
-		CA8FEBA88188E98539D76831 /* Products */ = {
+		A5BDE3C319663E8A284B52CC81416776 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				C17768AF84A171BC9BBE6592 /* libPods.a */,
-				DB080E6A5CAA3E293DF10FE0 /* libPods-FBAnnotationClustering.a */,
+				2CA12D3D26266B4B6EEE74B868224D4D /* GoogleMaps.bundle */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		B3D1D13E0C6553800746CB8FD61CF946 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				37DB56D75062CC75FCB0966E1C6E8A8E /* Pods-acknowledgements.markdown */,
+				10834806BD7B412BC24F347361FA2C8E /* Pods-acknowledgements.plist */,
+				272643F56613CA0D336AE3DBF19DC404 /* Pods-dummy.m */,
+				6911BECA35E7518D864239B7E898EEF3 /* Pods-frameworks.sh */,
+				A1A36D34413696BE466E2CA0AFF194DA /* Pods-resources.sh */,
+				4E762F23EC34ED4A6FF3312D84E33A40 /* Pods.debug.xcconfig */,
+				98C98CDFB3F20F2925F6CD1F141BB14F /* Pods.release.xcconfig */,
+			);
+			name = Pods;
+			path = "Target Support Files/Pods";
+			sourceTree = "<group>";
+		};
+		BDC65CAF478A4734EB44F48D2E58BC69 /* Development Pods */ = {
+			isa = PBXGroup;
+			children = (
+				003B964493461BBBD676D9632D894642 /* FBAnnotationClustering */,
+			);
+			name = "Development Pods";
+			sourceTree = "<group>";
+		};
+		CAF7C52FDAB7483B8E2DC265983EBBF1 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				8F482EB359F42174E33CC7E1485CECFC /* libFBAnnotationClustering.a */,
+				97DE507A00ECABE378CDCB82DAE751D1 /* libPods.a */,
+				0381E7DB26505B982E8302CC274AC4CF /* libPureLayout.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		F4443EF86D567598B474A832 = {
+		DB348FBF951F2E2C01100A13F7489B9B /* iOS */ = {
 			isa = PBXGroup;
 			children = (
-				39E2421312B5DE4017223A40 /* Podfile */,
-				0F22455307228A0B3BE7B67D /* Development Pods */,
-				1AE4433C896E3F972A23989F /* Frameworks */,
-				CA8FEBA88188E98539D76831 /* Products */,
-				553D668234A90597C62B331A /* Targets Support Files */,
+				D67B24007E8B35A621D9C576E66085B1 /* CoreLocation.framework */,
+				DFD95E1FA4F08B2EC8ABE9AC2C4F8264 /* Foundation.framework */,
+				7AF6FF91DD0721415418E850C74A017A /* MapKit.framework */,
 			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		E0AF7DD4032A09632F2858E6B7A6A55E /* PureLayout */ = {
+			isa = PBXGroup;
+			children = (
+				51FCF6DB7CDF507F6D5D6E14A1E96F6F /* ALView+PureLayout.h */,
+				BC8B47D6C8EB0E4F0613835B241F9772 /* ALView+PureLayout.m */,
+				D296B0548859F7A4F8B697E3307BC95E /* NSArray+PureLayout.h */,
+				DB8CB914C2F63BF927F61738C7AF2051 /* NSArray+PureLayout.m */,
+				7281970E716E060FCA80A062A3825DFD /* NSLayoutConstraint+PureLayout.h */,
+				CFD8E3A8446D9D10DC0F6DAE9C582C95 /* NSLayoutConstraint+PureLayout.m */,
+				C51D78775D0356F46D590E42CEE14C41 /* PureLayout.h */,
+				87548E100D0FB0F59F34FC7EE58A1D77 /* PureLayout+Internal.h */,
+				41CD40BE9F27C2691DCE7AD8F73B0255 /* PureLayoutDefines.h */,
+				28F2D549919A3460A7CFCEA62188A193 /* Support Files */,
+			);
+			path = PureLayout;
+			sourceTree = "<group>";
+		};
+		E2913BC9752450F3B4D6BB16759E01F4 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				50197A693E912BE82380B95E4E9EC4AA /* GoogleMaps */,
+				E0AF7DD4032A09632F2858E6B7A6A55E /* PureLayout */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		E3AE381A7E09F4A27112BFE1051FD726 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				810158DF6B325DF72D76CD35FECED7D0 /* GoogleMaps.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		AF2B3536EDF12302BDFFB67C /* Headers */ = {
+		5A1D176B6A69C825B2FEA31AE8F37D19 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1F2755EE6457F3ABCB05526C /* FBAnnotationCluster.h in Headers */,
-				47BD55B975CAFF97A70BE51F /* FBAnnotationClustering.h in Headers */,
-				B3800966EAF83DC52996D642 /* FBClusteringManager.h in Headers */,
-				C314623E58DEE8CBE26B7337 /* FBQuadTree.h in Headers */,
-				5FDE8333E8C10B25209A11D8 /* FBQuadTreeNode.h in Headers */,
+				41B483DAB40DFAA176987AA53546BA55 /* FBAnnotationCluster.h in Headers */,
+				BB83E6133675972F8416EDCB10618A6D /* FBAnnotationClustering.h in Headers */,
+				657A6F7D16774B2612D2200D6CE67194 /* FBClusteringManager.h in Headers */,
+				5A9F9FE8E9CECCDF134DDC4769AAD572 /* FBQuadTree.h in Headers */,
+				2A8897F67C4CC6BA43B7A18C730F340B /* FBQuadTreeNode.h in Headers */,
+				4999CFED1C770B24004176A9 /* GMSMapView+Annotations.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7840B5D37B3F25252E496A41DAFF9058 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9FC8E9C135D784E3B2543148E0A07048 /* ALView+PureLayout.h in Headers */,
+				1C156A1DF416F372BF0F4496C21D2A61 /* NSArray+PureLayout.h in Headers */,
+				95C34158590EEAE4C7FF9881E4F5FD9C /* NSLayoutConstraint+PureLayout.h in Headers */,
+				F2805FDFB638214D7106823FB630AD7F /* PureLayout+Internal.h in Headers */,
+				27798B235B14449D6347E1FB38BE7924 /* PureLayout.h in Headers */,
+				5B926BEA0A46CFE8BBABF63888DC4DDE /* PureLayoutDefines.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		3370D7F355672284AE2E5DEB /* Pods */ = {
+		2BBBBD535B6C5CB69523DDC370D95E48 /* PureLayout */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 9BE4CFF2F35C88C74F279528 /* Build configuration list for PBXNativeTarget "Pods" */;
+			buildConfigurationList = DEFAD4E5A42AC6DB9F4FAC1AF8AC0F21 /* Build configuration list for PBXNativeTarget "PureLayout" */;
 			buildPhases = (
-				9F326E7F478457E1185BE048 /* Sources */,
-				3C923BC5411AF1FA98C39387 /* Frameworks */,
+				4EB53FBFE362EE77A3EF3459D495E781 /* Sources */,
+				5727B2F51377B6FAED4AA30671DCC805 /* Frameworks */,
+				7840B5D37B3F25252E496A41DAFF9058 /* Headers */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				0019CB04166AB4429441080A /* PBXTargetDependency */,
+			);
+			name = PureLayout;
+			productName = PureLayout;
+			productReference = 0381E7DB26505B982E8302CC274AC4CF /* libPureLayout.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		2DB1537E095B87C8C4EEE9F14ACAF56C /* Pods */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9913323744610DDC4128DB578B6803E5 /* Build configuration list for PBXNativeTarget "Pods" */;
+			buildPhases = (
+				CA6FEA50371183503E5E92B6560A8F43 /* Sources */,
+				327694C1FEF166CAC77D1F6CCE94E447 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				8DC17038D6BA445CB70AAA423A09E4E1 /* PBXTargetDependency */,
+				8B1506E6CBD7820B6A9FACF15F4B26B8 /* PBXTargetDependency */,
 			);
 			name = Pods;
 			productName = Pods;
-			productReference = C17768AF84A171BC9BBE6592 /* libPods.a */;
+			productReference = 97DE507A00ECABE378CDCB82DAE751D1 /* libPods.a */;
 			productType = "com.apple.product-type.library.static";
 		};
-		656299E91232636B85E5E89D /* Pods-FBAnnotationClustering */ = {
+		47F297000224A08E8F3E51773A4A60F2 /* FBAnnotationClustering */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = BE312520F27B414C8162B4FC /* Build configuration list for PBXNativeTarget "Pods-FBAnnotationClustering" */;
+			buildConfigurationList = B1B6FAD00183ABC725AE492FAEE81951 /* Build configuration list for PBXNativeTarget "FBAnnotationClustering" */;
 			buildPhases = (
-				0D5A018A26568D670E6D1EEC /* Sources */,
-				5CFDCF00CCB425D8050DD061 /* Frameworks */,
-				AF2B3536EDF12302BDFFB67C /* Headers */,
+				5DE8209E63ED475E1832E0DABF0FA65B /* Sources */,
+				7835A22DD40F6B5E846DE85529D00135 /* Frameworks */,
+				5A1D176B6A69C825B2FEA31AE8F37D19 /* Headers */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = "Pods-FBAnnotationClustering";
-			productName = "Pods-FBAnnotationClustering";
-			productReference = DB080E6A5CAA3E293DF10FE0 /* libPods-FBAnnotationClustering.a */;
+			name = FBAnnotationClustering;
+			productName = FBAnnotationClustering;
+			productReference = 8F482EB359F42174E33CC7E1485CECFC /* libFBAnnotationClustering.a */;
 			productType = "com.apple.product-type.library.static";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		994E7505722C01E294FB84AE /* Project object */ = {
+		D41D8CD98F00B204E9800998ECF8427E /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0640;
+				LastSwiftUpdateCheck = 0700;
+				LastUpgradeCheck = 0700;
 			};
-			buildConfigurationList = B7AB3459B1C5EBB044F44CC5 /* Build configuration list for PBXProject "Pods" */;
+			buildConfigurationList = 2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
 			);
-			mainGroup = F4443EF86D567598B474A832;
-			productRefGroup = CA8FEBA88188E98539D76831 /* Products */;
+			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
+			productRefGroup = CAF7C52FDAB7483B8E2DC265983EBBF1 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				3370D7F355672284AE2E5DEB /* Pods */,
-				656299E91232636B85E5E89D /* Pods-FBAnnotationClustering */,
+				47F297000224A08E8F3E51773A4A60F2 /* FBAnnotationClustering */,
+				2DB1537E095B87C8C4EEE9F14ACAF56C /* Pods */,
+				2BBBBD535B6C5CB69523DDC370D95E48 /* PureLayout */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXSourcesBuildPhase section */
-		0D5A018A26568D670E6D1EEC /* Sources */ = {
+		4EB53FBFE362EE77A3EF3459D495E781 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				230111A9AC22CD3C7169D183 /* FBAnnotationCluster.m in Sources */,
-				BE1A6F2FF38010DFD82F9120 /* FBClusteringManager.m in Sources */,
-				C8A58CB4C4D052E5C9EC745F /* FBQuadTree.m in Sources */,
-				F8439367A557D44B5B7C89BC /* FBQuadTreeNode.m in Sources */,
-				971732DFA55044200E897E38 /* Pods-FBAnnotationClustering-dummy.m in Sources */,
+				8D8CFFFC9264371298DC7B5825126F49 /* ALView+PureLayout.m in Sources */,
+				19B488E76D64058B6FF703F58D1AF7EF /* NSArray+PureLayout.m in Sources */,
+				FC1AEE6BA9501376F7DD3C79F29F3C1C /* NSLayoutConstraint+PureLayout.m in Sources */,
+				39F1642E4408625EA17C87E5DC19BC6B /* PureLayout-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		9F326E7F478457E1185BE048 /* Sources */ = {
+		5DE8209E63ED475E1832E0DABF0FA65B /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6E348167BE41ACB4E22CEB92 /* Pods-dummy.m in Sources */,
+				4999CFEE1C770B24004176A9 /* GMSMapView+Annotations.m in Sources */,
+				5026BD60790395B1454E0B81FC4E7EF3 /* FBAnnotationCluster.m in Sources */,
+				92A7C8FFC40367BB24C473E006143EBA /* FBAnnotationClustering-dummy.m in Sources */,
+				FA9B685DA02429A0104E16A8B77F6279 /* FBClusteringManager.m in Sources */,
+				29BCFB5C425B3CD2B9F47DC1319E1C19 /* FBQuadTree.m in Sources */,
+				9D2CA8ECD5BE94B131304D5FF04BC68A /* FBQuadTreeNode.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CA6FEA50371183503E5E92B6560A8F43 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6C5084401787B3BBC5A064C6FDECB716 /* Pods-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		0019CB04166AB4429441080A /* PBXTargetDependency */ = {
+		8B1506E6CBD7820B6A9FACF15F4B26B8 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			name = "Pods-FBAnnotationClustering";
-			target = 656299E91232636B85E5E89D /* Pods-FBAnnotationClustering */;
-			targetProxy = 40C75EFF072D1CADA1C79FAB /* PBXContainerItemProxy */;
+			name = PureLayout;
+			target = 2BBBBD535B6C5CB69523DDC370D95E48 /* PureLayout */;
+			targetProxy = 402D1318B20B1B64A32F629E7010985A /* PBXContainerItemProxy */;
+		};
+		8DC17038D6BA445CB70AAA423A09E4E1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = FBAnnotationClustering;
+			target = 47F297000224A08E8F3E51773A4A60F2 /* FBAnnotationClustering */;
+			targetProxy = 92531FC7947123889A765880284D5D2F /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		17B2486D04062AD392CAE0F3 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = C512DDE43244CF21726CE691 /* Pods.debug.xcconfig */;
-			buildSettings = {
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
-				MTL_ENABLE_DEBUG_INFO = YES;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-			};
-			name = Debug;
-		};
-		2A88F3C00B5515D584C42435 /* Release */ = {
+		03CA91998D6773EC5D02B3DB87B8353E /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -346,62 +491,14 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				STRIP_INSTALLED_PRODUCT = NO;
 				SYMROOT = "${SRCROOT}/../build";
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
 		};
-		7C798D73062C1FD750E43CDB /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 68E3E6C81C04657D6EA37223 /* Pods-FBAnnotationClustering-Private.xcconfig */;
-			buildSettings = {
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/Pods-FBAnnotationClustering/Pods-FBAnnotationClustering-prefix.pch";
-				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
-				MTL_ENABLE_DEBUG_INFO = YES;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-			};
-			name = Debug;
-		};
-		906FABFB09EC0B2C7172AAA8 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 9E10339F9D3F3EA5F5920902 /* Pods.release.xcconfig */;
-			buildSettings = {
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
-				MTL_ENABLE_DEBUG_INFO = NO;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-			};
-			name = Release;
-		};
-		A97C0A3E61AFD9F6154A7A57 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 68E3E6C81C04657D6EA37223 /* Pods-FBAnnotationClustering-Private.xcconfig */;
-			buildSettings = {
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/Pods-FBAnnotationClustering/Pods-FBAnnotationClustering-prefix.pch";
-				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
-				MTL_ENABLE_DEBUG_INFO = NO;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-			};
-			name = Release;
-		};
-		BFE51117520896673AA11201 /* Debug */ = {
+		0B57334D6C23DADAA4F7D802A5760EB2 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -433,44 +530,159 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				ONLY_ACTIVE_ARCH = YES;
 				STRIP_INSTALLED_PRODUCT = NO;
 				SYMROOT = "${SRCROOT}/../build";
 			};
 			name = Debug;
 		};
+		25F73F7884088C97CDCAF32A0EFFF7CE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4E762F23EC34ED4A6FF3312D84E33A40 /* Pods.debug.xcconfig */;
+			buildSettings = {
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				MACH_O_TYPE = staticlib;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		3572F2B062FDF4EACA937BCA80FA9EA5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B8D909457ECBFE8CEB0354900E09D0A4 /* FBAnnotationClustering.xcconfig */;
+			buildSettings = {
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/FBAnnotationClustering/FBAnnotationClustering-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRIVATE_HEADERS_FOLDER_PATH = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PUBLIC_HEADERS_FOLDER_PATH = "";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		3EB99E916D51A8DCDC0030A968D22E93 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B8D909457ECBFE8CEB0354900E09D0A4 /* FBAnnotationClustering.xcconfig */;
+			buildSettings = {
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/FBAnnotationClustering/FBAnnotationClustering-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRIVATE_HEADERS_FOLDER_PATH = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PUBLIC_HEADERS_FOLDER_PATH = "";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		4C68385878D5AD7BECF01235D4BA6E1D /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 98C98CDFB3F20F2925F6CD1F141BB14F /* Pods.release.xcconfig */;
+			buildSettings = {
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				MACH_O_TYPE = staticlib;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		5F09A767327EFD45050C4B90D4533391 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 41FD774A69B79D7135365669ACE9697A /* PureLayout.xcconfig */;
+			buildSettings = {
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/PureLayout/PureLayout-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRIVATE_HEADERS_FOLDER_PATH = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PUBLIC_HEADERS_FOLDER_PATH = "";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		C0EADC86705C1AD3874C0FA8F4FF4FB3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 41FD774A69B79D7135365669ACE9697A /* PureLayout.xcconfig */;
+			buildSettings = {
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/PureLayout/PureLayout-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRIVATE_HEADERS_FOLDER_PATH = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PUBLIC_HEADERS_FOLDER_PATH = "";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		9BE4CFF2F35C88C74F279528 /* Build configuration list for PBXNativeTarget "Pods" */ = {
+		2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				17B2486D04062AD392CAE0F3 /* Debug */,
-				906FABFB09EC0B2C7172AAA8 /* Release */,
+				0B57334D6C23DADAA4F7D802A5760EB2 /* Debug */,
+				03CA91998D6773EC5D02B3DB87B8353E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		B7AB3459B1C5EBB044F44CC5 /* Build configuration list for PBXProject "Pods" */ = {
+		9913323744610DDC4128DB578B6803E5 /* Build configuration list for PBXNativeTarget "Pods" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				BFE51117520896673AA11201 /* Debug */,
-				2A88F3C00B5515D584C42435 /* Release */,
+				25F73F7884088C97CDCAF32A0EFFF7CE /* Debug */,
+				4C68385878D5AD7BECF01235D4BA6E1D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		BE312520F27B414C8162B4FC /* Build configuration list for PBXNativeTarget "Pods-FBAnnotationClustering" */ = {
+		B1B6FAD00183ABC725AE492FAEE81951 /* Build configuration list for PBXNativeTarget "FBAnnotationClustering" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				7C798D73062C1FD750E43CDB /* Debug */,
-				A97C0A3E61AFD9F6154A7A57 /* Release */,
+				3EB99E916D51A8DCDC0030A968D22E93 /* Debug */,
+				3572F2B062FDF4EACA937BCA80FA9EA5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DEFAD4E5A42AC6DB9F4FAC1AF8AC0F21 /* Build configuration list for PBXNativeTarget "PureLayout" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C0EADC86705C1AD3874C0FA8F4FF4FB3 /* Debug */,
+				5F09A767327EFD45050C4B90D4533391 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = 994E7505722C01E294FB84AE /* Project object */;
+	rootObject = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
 }

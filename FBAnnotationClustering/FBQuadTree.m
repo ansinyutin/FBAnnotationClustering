@@ -19,19 +19,19 @@
     return self;
 }
 
-- (BOOL)insertAnnotation:(id<MKAnnotation>)annotation
+- (BOOL)insertAnnotation:(id<GMSMarker>)annotation
 {
     return [self insertAnnotation:annotation toNode:self.rootNode];
 }
 
-- (BOOL)removeAnnotation:(id<MKAnnotation>)annotation
+- (BOOL)removeAnnotation:(id<GMSMarker>)annotation
 {
     return [self removeAnnotation:annotation fromNode:self.rootNode];
 }
 
-- (BOOL)removeAnnotation:(id<MKAnnotation>)annotation fromNode:(FBQuadTreeNode *)node
+- (BOOL)removeAnnotation:(id<GMSMarker>)annotation fromNode:(FBQuadTreeNode *)node
 {
-    if (!FBBoundingBoxContainsCoordinate(node.boundingBox, [annotation coordinate])) {
+    if (!FBBoundingBoxContainsCoordinate(node.boundingBox, [annotation position])) {
         return NO;
     }
 
@@ -50,9 +50,9 @@
 }
 
 
-- (BOOL)insertAnnotation:(id<MKAnnotation>)annotation toNode:(FBQuadTreeNode *)node
+- (BOOL)insertAnnotation:(id<GMSMarker>)annotation toNode:(FBQuadTreeNode *)node
 {
-    if (!FBBoundingBoxContainsCoordinate(node.boundingBox, [annotation coordinate])) {
+    if (!FBBoundingBoxContainsCoordinate(node.boundingBox, [annotation position])) {
         return NO;
     }
     
@@ -73,17 +73,17 @@
     return NO;
 }
 
-- (void)enumerateAnnotationsInBox:(FBBoundingBox)box usingBlock:(void (^)(id<MKAnnotation>))block
+- (void)enumerateAnnotationsInBox:(FBBoundingBox)box usingBlock:(void (^)(id<GMSMarker>))block
 {
     [self enumerateAnnotationsInBox:box withNode:self.rootNode usingBlock:block];
 }
 
-- (void)enumerateAnnotationsUsingBlock:(void (^)(id<MKAnnotation>))block
+- (void)enumerateAnnotationsUsingBlock:(void (^)(id<GMSMarker>))block
 {
     [self enumerateAnnotationsInBox:FBBoundingBoxForMapRect(MKMapRectWorld) withNode:self.rootNode usingBlock:block];
 }
 
-- (void)enumerateAnnotationsInBox:(FBBoundingBox)box withNode:(FBQuadTreeNode*)node usingBlock:(void (^)(id<MKAnnotation>))block
+- (void)enumerateAnnotationsInBox:(FBBoundingBox)box withNode:(FBQuadTreeNode*)node usingBlock:(void (^)(id<GMSMarker>))block
 {
     if (!FBBoundingBoxIntersectsBoundingBox(node.boundingBox, box)) {
         return;
@@ -91,8 +91,8 @@
     
     NSArray *tempArray = [node.annotations copy];
     
-    for (id<MKAnnotation> annotation in tempArray) {
-        if (FBBoundingBoxContainsCoordinate(box, [annotation coordinate])) {
+    for (id<GMSMarker> annotation in tempArray) {
+        if (FBBoundingBoxContainsCoordinate(box, [annotation position])) {
             block(annotation);
         }
     }
