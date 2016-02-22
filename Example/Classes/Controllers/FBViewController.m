@@ -79,7 +79,7 @@
     
     [self.mapView autoPinEdgesToSuperviewEdges];
     
-    self.clusterFont = [UIFont systemFontOfSize:10];
+    self.clusterFont = [UIFont boldSystemFontOfSize:12];
     
 //    FBHotel * hotel = [FBHotel new];
 //    hotel.position = centerLL;

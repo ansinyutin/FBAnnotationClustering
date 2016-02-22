@@ -15,7 +15,7 @@
 {
     self = [super init];
     if (self) {
-        self.font = [UIFont systemFontOfSize:14];
+        self.font = [UIFont boldSystemFontOfSize:14];
         [self initDefaults];
     }
     return self;
@@ -26,7 +26,7 @@
 {
     self = [super init];
     if (self) {
-        self.font = (font) ?: [UIFont systemFontOfSize:14];
+        self.font = (font) ?: [UIFont boldSystemFontOfSize:14];
         [self initDefaults];
     }
     return self;
