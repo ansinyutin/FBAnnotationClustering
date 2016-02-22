@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "FBQuadTreeNode.h"
-
+#import "FBAnnotation.h"
 /**
  Quad Tree. You should never use this class.
  */
@@ -21,22 +21,22 @@
 /**
  Insert new annotation in tree.
  */
-- (BOOL)insertAnnotation:(id<GMSMarker>)annotation;
+- (BOOL)insertAnnotation:(id<FBAnnotation>)annotation;
 
 /**
  Remove an annotation from the tree.
  */
-- (BOOL)removeAnnotation:(id<GMSMarker>)annotation;
+- (BOOL)removeAnnotation:(id<FBAnnotation>)annotation;
 
 /**
  Enumerate annotations in @c box.
  */
-- (void)enumerateAnnotationsInBox:(FBBoundingBox)box usingBlock:(void (^)(id<GMSMarker> obj))block;
+- (void)enumerateAnnotationsInBox:(FBBoundingBox)box usingBlock:(void (^)(id<FBAnnotation> obj))block;
 
 
 /**
  Enumerate all annotations.
  */
-- (void)enumerateAnnotationsUsingBlock:(void (^)(id<GMSMarker> obj))block;
+- (void)enumerateAnnotationsUsingBlock:(void (^)(id<FBAnnotation> obj))block;
 
 @end

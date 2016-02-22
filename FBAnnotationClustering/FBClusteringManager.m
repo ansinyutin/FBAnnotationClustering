@@ -107,7 +107,7 @@ CGFloat FBCellSizeForZoomScale(MKZoomScale zoomScale)
     return [self clusteredAnnotationsWithinMapRect:rect withZoomScale:zoomScale withFilter:nil];
 }
 
-- (NSArray *)clusteredAnnotationsWithinMapRect:(MKMapRect)rect withZoomScale:(double)zoomScale withFilter:(BOOL (^)(id)) filter
+- (NSArray *)clusteredAnnotationsWithinMapRect:(MKMapRect)rect withZoomScale:(double)zoomScale withFilter:(BOOL (^)(id<FBAnnotation>)) filter
 {
     double cellSize = FBCellSizeForZoomScale(zoomScale);
     if ([self.delegate respondsToSelector:@selector(cellSizeFactorForCoordinator:)]) {
@@ -133,7 +133,7 @@ CGFloat FBCellSizeForZoomScale(MKZoomScale zoomScale)
             
             NSMutableArray *annotations = [[NSMutableArray alloc] init];
 
-            [self.tree enumerateAnnotationsInBox:mapBox usingBlock:^(id<GMSMarker> obj) {
+            [self.tree enumerateAnnotationsInBox:mapBox usingBlock:^(id<FBAnnotation> obj) {
                 
                 if(!filter || (filter(obj) == TRUE))
                 {
@@ -167,7 +167,7 @@ CGFloat FBCellSizeForZoomScale(MKZoomScale zoomScale)
     NSMutableArray *annotations = [[NSMutableArray alloc] init];
     
     [self.lock lock];
-    [self.tree enumerateAnnotationsUsingBlock:^(id<GMSMarker> obj) {
+    [self.tree enumerateAnnotationsUsingBlock:^(id<FBAnnotation> obj) {
         [annotations addObject:obj];
     }];
     [self.lock unlock];
@@ -175,7 +175,7 @@ CGFloat FBCellSizeForZoomScale(MKZoomScale zoomScale)
     return annotations;
 }
 
-- (void)displayAnnotations:(NSArray *)annotations onMapView:(GMSMapView *)mapView
+- (void)displayAnnotations:(NSArray *)annotations onMapView:(FBGMSMapView *)mapView
 {
     NSMutableSet *before = [NSMutableSet setWithArray:mapView.annotations];
 //    MKUserLocation *userLocation = [mapView userLocation];

@@ -1,4 +1,4 @@
-//
+
 //  FBAnnotationCluster.h
 //  AnnotationClustering
 //
@@ -7,19 +7,19 @@
 //
 
 #import <Foundation/Foundation.h>
-#import <GoogleMaps/GoogleMaps.h>
+#import <CoreLocation/CoreLocation.h>
+#import "FBAnnotation.h"
 
-
-
-//@class MKAnnotation;
 /**
- Class that is used to display annotation clusters.
+ TODO:
+ - протокол FBAnnotation с position
+ - FBAnnotationCluster кастомная отрисовка кластера и одиночного маркера
  */
 
-@interface FBAnnotationCluster : GMSMarker
+@interface FBAnnotationCluster : NSObject <FBAnnotation>
 
 /// Coordinate of the annotation. It will always be set.
-//@property (nonatomic, assign) CLLocationCoordinate2D coordinate;
+@property (nonatomic, assign) CLLocationCoordinate2D position;
 
 /// Title of the annotation. Default is @c nil, but can be set.
 @property (nonatomic, copy) NSString *title;

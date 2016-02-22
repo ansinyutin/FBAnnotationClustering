@@ -13,18 +13,23 @@
 #import <GoogleMaps/GoogleMaps.h>
 
 #import <PureLayout/PureLayout.h>
+#import "FBGMSMapView.h"
+#import "FBHotel.h"
+
+#import "FBCircleClusterView.h"
 
 #define kNUMBER_OF_LOCATIONS 1000
 #define kFIRST_LOCATIONS_TO_REMOVE 50
 
-@interface FBViewController ()<GMSMapViewDelegate>
+@interface FBViewController ()<GMSMapViewDelegate, FBGMSMapViewDelegate>
 
 
 @property (weak, nonatomic) IBOutlet UILabel *numberOfAnnotationsLabel;
 
-@property (nonatomic, strong) GMSMapView *mapView;
+@property (nonatomic, strong) FBGMSMapView *mapView;
 @property (nonatomic, assign) NSUInteger numberOfLocations;
 @property (nonatomic, strong) FBClusteringManager *clusteringManager;
+@property (nonatomic, strong) UIFont *clusterFont;
 
 @end
 
@@ -48,126 +53,95 @@
     self.clusteringManager = [[FBClusteringManager alloc] initWithAnnotations:array];
     self.clusteringManager.delegate = self;
     
-//    CLLocationCoordinate2D defaultCenter = [(GMSMarker*)array[0] position];
+    /**
+     Широта	55°45′21″N (55.755776)
+     Долгота	37°36′53″E (37.614612)
+
+     */
+
+    // Георгий
+//    CLLocationCoordinate2D centerLL = CLLocationCoordinate2DMake(55.755815, 37.614632);
+    CLLocationCoordinate2D centerLL = CLLocationCoordinate2DMake(0, 0);
     
-    GMSCameraPosition *camera = [GMSCameraPosition cameraWithLatitude:0
-                                                            longitude:0
+
+
+    GMSCameraPosition *camera = [GMSCameraPosition cameraWithLatitude:centerLL.latitude
+                                                            longitude:centerLL.longitude
                                                                  zoom:0];
-    self.mapView = [[GMSMapView alloc] init];
+    self.mapView = [[FBGMSMapView alloc] init];
     self.mapView.delegate = self;
-    [self.mapView setCamera:camera];
+    self.mapView.markerDelegate = self;
+    self.mapView.camera = camera;
+//    [self.mapView setCamera:camera];
     self.mapView.settings.compassButton = YES;
     
     [self.view addSubview:self.mapView];
     
     [self.mapView autoPinEdgesToSuperviewEdges];
     
-//    [self mapView:self.mapView regionDidChangeAnimated:NO];
-
-
-//    NSMutableArray *annotationsToRemove = [[NSMutableArray alloc] init];
-//    for (int i=0; i<kFIRST_LOCATIONS_TO_REMOVE; i++) {
-//        [annotationsToRemove addObject:array[i]];
-//    }
-//    [self.clusteringManager removeAnnotations:annotationsToRemove];
-}
-
-- (MKMapRect)MKMapRectForCoordinateRegion:(MKCoordinateRegion)region
-{
-    MKMapPoint a = MKMapPointForCoordinate(CLLocationCoordinate2DMake(
-                                                                      region.center.latitude + region.span.latitudeDelta / 2,
-                                                                      region.center.longitude - region.span.longitudeDelta / 2));
-    MKMapPoint b = MKMapPointForCoordinate(CLLocationCoordinate2DMake(
-                                                                      region.center.latitude - region.span.latitudeDelta / 2,
-                                                                      region.center.longitude + region.span.longitudeDelta / 2));
-    return MKMapRectMake(MIN(a.x,b.x), MIN(a.y,b.y), ABS(a.x-b.x), ABS(a.y-b.y));
-}
-
-- (MKMapRect)getMapRect
-{
-    GMSCameraPosition * position = self.mapView.camera;
-    CLLocationCoordinate2D tl = self.mapView.projection.visibleRegion.farLeft;
-    CLLocationCoordinate2D tr = self.mapView.projection.visibleRegion.farRight;
+    self.clusterFont = [UIFont systemFontOfSize:10];
     
-    CLLocationCoordinate2D bl = self.mapView.projection.visibleRegion.nearLeft;
-    CLLocationCoordinate2D br = self.mapView.projection.visibleRegion.nearRight;
-    
-    
-    CGPoint tlPoint = [self.mapView.projection pointForCoordinate:self.mapView.projection.visibleRegion.farLeft];
-    CGPoint trPoint = [self.mapView.projection pointForCoordinate:self.mapView.projection.visibleRegion.farRight];
-    
-    CGPoint blPoint = [self.mapView.projection pointForCoordinate:self.mapView.projection.visibleRegion.nearLeft];
-    CGPoint brPoint = [self.mapView.projection pointForCoordinate:self.mapView.projection.visibleRegion.nearRight];
-    
-    NSLog(@"\n|⁻ lat %f lon %f   lat %f lon %f ⁻|\n|_ lat %f lon %f   lat %f lon %f _|\n",
-          
-          self.mapView.projection.visibleRegion.farLeft.latitude,
-          self.mapView.projection.visibleRegion.farLeft.longitude,
-          
-          self.mapView.projection.visibleRegion.farRight.latitude,
-          self.mapView.projection.visibleRegion.farRight.longitude,
-          
-          self.mapView.projection.visibleRegion.nearLeft.latitude,
-          self.mapView.projection.visibleRegion.nearLeft.longitude,
-          
-          self.mapView.projection.visibleRegion.nearRight.latitude,
-          self.mapView.projection.visibleRegion.nearRight.longitude);
-    
-    
-    NSLog(@"\n|⁻ %f,%f   %f,%f ⁻|\n|_ %f,%f   %f,%f _|\n",
-          tlPoint.x,
-          tlPoint.y,
-          
-          trPoint.x,
-          trPoint.y,
-          
-          blPoint.x,
-          blPoint.y,
-          
-          brPoint.x,
-          brPoint.y);
-    
-    CLLocationDegrees latDelta = fabs( tr.latitude - bl.latitude );
-    CLLocationDegrees lonDelta = fabs( tr.longitude - bl.longitude );
-    
-    NSLog(@"DELTA\n ↑ %f   -> %f", latDelta, lonDelta);
-    
-    MKCoordinateRegion region = MKCoordinateRegionMake(position.target, MKCoordinateSpanMake(latDelta, lonDelta));
-    
-    MKMapRect rect = [self MKMapRectForCoordinateRegion:region];
-
-    return rect;
-
-}
-
-
-- (void)mapView:(GMSMapView *)mapView idleAtCameraPosition:(GMSCameraPosition *)position;
-{
-//    CLLocationCoordinate2D loc = CL
-    
-    
-    
-//    NSLog(@"afterMapRectSet %f,%f w %f h %f",
-//          rect.origin.x,
-//          rect.origin.y,
-//          rect.size.width,
-//          rect.size.height);
+//    FBHotel * hotel = [FBHotel new];
+//    hotel.position = centerLL;
 //    
-//    NSLog(@"REGION %f,%f w %f h %f",
-//          region.center.latitude,
-//          region.center.longitude,
-//          region.span.latitudeDelta,
-//          region.span.longitudeDelta);
+//    [self.mapView addAnnotation:hotel];
+//    
     
-    [[NSOperationQueue new] addOperationWithBlock:^{
-//        self.mapView.camera.zoom
-        MKMapRect rect = [self getMapRect];
+    // Cluster Marker test
+    
+//    UIImage * img = [FBCircleClusterView clusterImageForText:@"111"];
+//    UIImageView * cluster = [[UIImageView alloc] initWithImage:img];
+//    [cluster setBounds:CGRectMake(0, 0, img.size.width, img.size.height)];
+////    UIView * cluster = [[UIView alloc] init];;
+////    cluster.text = @"232";
+//    
+//    cluster.layer.borderColor = UIColor.grayColor.CGColor;
+//    cluster.layer.borderWidth = 0.5f;
+////    cluster.backgroundColor = UIColor.redColor;
+//    
+//    [self.view addSubview:cluster];
+//    
+//    [cluster autoPinEdgeToSuperviewEdge:ALEdgeTop withInset:100];
+//    [cluster autoPinEdgeToSuperviewEdge:ALEdgeLeft withInset:100];
+    
+    
+    
+}
+
+
+- (FBMarker*)mapView:(FBGMSMapView *)mapView markerForAnnotation:(id<FBAnnotation>)annotation
+{
+    FBMarker * marker = [[FBMarker alloc] init];
+    
+    if ([annotation isKindOfClass:[FBAnnotationCluster class]]) {
+        FBAnnotationCluster *cluster = (FBAnnotationCluster *)annotation;
+        
+        NSString * countStr = [NSString stringWithFormat:@"%ld", cluster.annotations.count];
+        
+        marker.icon = [FBCircleClusterView clusterImageForText:countStr withFont:self.clusterFont];
+        marker.groundAnchor = CGPointMake(0.5, 0.5);
+    }
+    
+//    marker.icon = [FBCircleClusterView clusterImageForText:@"1"];
+//    marker.groundAnchor = CGPointMake(0.5, 0.5);
+    
+    marker.position = annotation.position;
+    
+    return marker;
+
+}
+
+- (void)mapView:(FBGMSMapView *)mapView idleAtCameraPosition:(GMSCameraPosition *)position;
+{
+    
+        MKMapRect rect = [mapView MKMapRect];
         double scale = self.mapView.bounds.size.width / rect.size.width;
-//        double scale = self.mapView.projection.visibleRegion
+    
         NSArray *annotations = [self.clusteringManager clusteredAnnotationsWithinMapRect:rect withZoomScale:scale];
 
         [self.clusteringManager displayAnnotations:annotations onMapView:mapView];
-    }];
+    
+
 }
 
 - (NSMutableArray*) hotelLocation
@@ -186,13 +160,13 @@
     
     double lat,lon;
 //    FBAnnotation * ann;
-    GMSMarker *ann;
+    FBHotel *ann;
     
     
     for (NSString * line in lines) {
         components = [line componentsSeparatedByString:@", "];
         
-        ann = [[GMSMarker alloc] init];
+        ann = [[FBHotel alloc] init];
         
         lat = [components[1] doubleValue];
         lon = [components[0] doubleValue];
@@ -252,36 +226,36 @@
 
 - (CGFloat)cellSizeFactorForCoordinator:(FBClusteringManager *)coordinator
 {
-    return 1.5;
+    return 1.0;
 }
 
 #pragma mark - Add annotations button action handler
 
 - (IBAction)addNewAnnotations:(id)sender
 {
-    NSMutableArray *array = [self randomLocationsWithCount:kNUMBER_OF_LOCATIONS];
-    [self.clusteringManager addAnnotations:array];
-    
-    self.numberOfLocations += kNUMBER_OF_LOCATIONS;
-    [self updateLabelText];
-    
-    // Update annotations on the map
-    [self mapView:self.mapView regionDidChangeAnimated:NO];
+//    NSMutableArray *array = [self randomLocationsWithCount:kNUMBER_OF_LOCATIONS];
+//    [self.clusteringManager addAnnotations:array];
+//    
+//    self.numberOfLocations += kNUMBER_OF_LOCATIONS;
+//    [self updateLabelText];
+//    
+//    // Update annotations on the map
+//    [self mapView:self.mapView regionDidChangeAnimated:NO];
 }
 
 #pragma mark - Utility
 
-- (NSMutableArray *)randomLocationsWithCount:(NSUInteger)count
-{
-    NSMutableArray *array = [NSMutableArray array];
-    for (int i = 0; i < count; i++) {
-        FBAnnotation *a = [[FBAnnotation alloc] init];
-        a.coordinate = CLLocationCoordinate2DMake(drand48() * 40 - 20, drand48() * 80 - 40);
-        
-        [array addObject:a];
-    }
-    return array;
-}
+//- (NSMutableArray *)randomLocationsWithCount:(NSUInteger)count
+//{
+//    NSMutableArray *array = [NSMutableArray array];
+//    for (int i = 0; i < count; i++) {
+//        FBAnnotation *a = [[FBAnnotation alloc] init];
+//        a.coordinate = CLLocationCoordinate2DMake(drand48() * 40 - 20, drand48() * 80 - 40);
+//        
+//        [array addObject:a];
+//    }
+//    return array;
+//}
 
 - (void)updateLabelText
 {

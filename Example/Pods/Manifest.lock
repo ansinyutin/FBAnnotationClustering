@@ -1,19 +1,12 @@
 PODS:
-  - FBAnnotationClustering (0.2.1)
   - GoogleMaps (1.9.2)
   - PureLayout (3.0.1)
 
 DEPENDENCIES:
-  - FBAnnotationClustering (from `../FBAnnotationClustering.podspec`)
   - GoogleMaps
   - PureLayout
 
-EXTERNAL SOURCES:
-  FBAnnotationClustering:
-    :path: ../FBAnnotationClustering.podspec
-
 SPEC CHECKSUMS:
-  FBAnnotationClustering: 2431c3669b7dced300243e761c8ade6115183448
   GoogleMaps: 56aac0f356383bab283c731acb1e687c51de6472
   PureLayout: f35f5384c9c4e4479df041dbe33ad7577b71ddfb
 

@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 #import "FBQuadTreeNode.h"
 #import "FBAnnotationCluster.h"
-//#import "GMSMapView+Annotations.h"
+#import "FBGMSMapView.h"
 
 @class FBClusteringManager;
 
@@ -80,7 +80,7 @@
 
 - (NSArray *)clusteredAnnotationsWithinMapRect:(MKMapRect)rect
                                  withZoomScale:(double)zoomScale
-                                 withFilter:(BOOL (^)(id<GMSMarker>)) filter;
+                                 withFilter:(BOOL (^)(id<FBAnnotation>)) filter;
 
 /**
  All annotations in quad tree.
@@ -97,6 +97,6 @@
  @discussion This method will remove only annotations that are on the map, but are not in the new array of annotations. Only new annotations will be added on the map. Annotations that are already on the map will not be updated.
  */
 - (void)displayAnnotations:(NSArray *)annotations
-                 onMapView:(GMSMapView *)mapView;
+                 onMapView:(FBGMSMapView *)mapView;
 
 @end

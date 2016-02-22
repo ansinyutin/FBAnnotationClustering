@@ -19,17 +19,17 @@
     return self;
 }
 
-- (BOOL)insertAnnotation:(id<GMSMarker>)annotation
+- (BOOL)insertAnnotation:(id<FBAnnotation>)annotation
 {
     return [self insertAnnotation:annotation toNode:self.rootNode];
 }
 
-- (BOOL)removeAnnotation:(id<GMSMarker>)annotation
+- (BOOL)removeAnnotation:(id<FBAnnotation>)annotation
 {
     return [self removeAnnotation:annotation fromNode:self.rootNode];
 }
 
-- (BOOL)removeAnnotation:(id<GMSMarker>)annotation fromNode:(FBQuadTreeNode *)node
+- (BOOL)removeAnnotation:(id<FBAnnotation>)annotation fromNode:(FBQuadTreeNode *)node
 {
     if (!FBBoundingBoxContainsCoordinate(node.boundingBox, [annotation position])) {
         return NO;
@@ -50,7 +50,7 @@
 }
 
 
-- (BOOL)insertAnnotation:(id<GMSMarker>)annotation toNode:(FBQuadTreeNode *)node
+- (BOOL)insertAnnotation:(id<FBAnnotation>)annotation toNode:(FBQuadTreeNode *)node
 {
     if (!FBBoundingBoxContainsCoordinate(node.boundingBox, [annotation position])) {
         return NO;
@@ -73,17 +73,17 @@
     return NO;
 }
 
-- (void)enumerateAnnotationsInBox:(FBBoundingBox)box usingBlock:(void (^)(id<GMSMarker>))block
+- (void)enumerateAnnotationsInBox:(FBBoundingBox)box usingBlock:(void (^)(id<FBAnnotation>))block
 {
     [self enumerateAnnotationsInBox:box withNode:self.rootNode usingBlock:block];
 }
 
-- (void)enumerateAnnotationsUsingBlock:(void (^)(id<GMSMarker>))block
+- (void)enumerateAnnotationsUsingBlock:(void (^)(id<FBAnnotation>))block
 {
     [self enumerateAnnotationsInBox:FBBoundingBoxForMapRect(MKMapRectWorld) withNode:self.rootNode usingBlock:block];
 }
 
-- (void)enumerateAnnotationsInBox:(FBBoundingBox)box withNode:(FBQuadTreeNode*)node usingBlock:(void (^)(id<GMSMarker>))block
+- (void)enumerateAnnotationsInBox:(FBBoundingBox)box withNode:(FBQuadTreeNode*)node usingBlock:(void (^)(id<FBAnnotation>))block
 {
     if (!FBBoundingBoxIntersectsBoundingBox(node.boundingBox, box)) {
         return;
@@ -91,7 +91,7 @@
     
     NSArray *tempArray = [node.annotations copy];
     
-    for (id<GMSMarker> annotation in tempArray) {
+    for (id<FBAnnotation> annotation in tempArray) {
         if (FBBoundingBoxContainsCoordinate(box, [annotation position])) {
             block(annotation);
         }
